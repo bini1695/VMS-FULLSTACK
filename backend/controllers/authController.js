@@ -45,7 +45,7 @@ const buildUserPayload = (u) => ({
 
 const signToken = (u) =>
   jwt.sign(
-    { id: u.user_id, role: toShortRole(u.role) },
+    { id: u.user_id, role: toShortRole(u.role), branch_id: u.branch_id ?? null },
     process.env.JWT_SECRET,
     { expiresIn: process.env.JWT_EXPIRES_IN || '8h' }
   );
