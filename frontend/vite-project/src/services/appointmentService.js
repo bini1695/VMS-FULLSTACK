@@ -1,4 +1,4 @@
-import { api } from '../../../../backend/services/api.js';
+import { api } from './api.js';
 
 export const appointmentService = {
   list:   (query = '') => api.get(`/appointments${query}`),
