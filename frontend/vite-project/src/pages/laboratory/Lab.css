@@ -1,0 +1,38 @@
+.kanban { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .kanban { grid-template-columns: 1fr; } }
+
+.kanban-col { background: #f6f9f8; border-radius: 14px; padding: 12px; min-height: 200px; }
+.kanban-col-header { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px 12px; font-size: 13px; font-weight: 600; }
+.kanban-col-header .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; display: inline-block; }
+.kanban-col-count { background: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11.5px; color: #4f6b63; }
+
+.kanban-card { background: #fff; border: 1px solid #e6ecea; border-radius: 10px; padding: 14px; margin-bottom: 10px; cursor: pointer; transition: all 0.15s; }
+.kanban-card:hover { box-shadow: 0 10px 30px -10px rgba(15, 41, 34, 0.15); }
+.kanban-card.flagged { border-color: #f0c1c1; background: #fffafa; }
+.kanban-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.kanban-card-id { font-size: 11.5px; font-weight: 700; color: #167a68; }
+.kanban-card-patient { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+.kanban-card-patient strong { display: block; font-size: 13.5px; font-weight: 600; }
+.kanban-card-patient span { font-size: 11.5px; color: #8fa39d; }
+.kanban-card-footer { display: flex; justify-content: space-between; font-size: 11.5px; color: #8fa39d; padding-top: 10px; border-top: 1px dashed #e6ecea; }
+
+.checklist-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f0f4f5; font-size: 13px; }
+.checklist-item:last-child { border-bottom: none; }
+.checklist-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.checklist-body strong { display: block; font-size: 14.5px; font-weight: 600; color: #0f2922; }
+.checklist-body span { font-size: 13px; color: #8fa39d; }
+
+.lab-toast { position: fixed; bottom: 24px; right: 24px; background: #0f2922; color: #fff; padding: 14px 20px; border-radius: 12px; font-size: 13.5px; font-weight: 500; box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4); display: flex; align-items: center; gap: 10px; z-index: 2000; }
+.lab-toast i { color: #a5e0c0; }
+
+.schedule-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 10px; border: 1px solid transparent; cursor: pointer; transition: all 0.15s; }
+.schedule-item:hover { background: #f6f9f8; }
+.schedule-item.active { background: #e6f5ee; border-color: #b8e0d9; }
+.schedule-time { font-size: 12.5px; font-weight: 700; color: #0f2922; width: 90px; flex-shrink: 0; }
+.schedule-info { flex: 1; min-width: 0; }
+.schedule-info strong { display: block; font-size: 13.5px; font-weight: 600; color: #0f2922; }
+.schedule-info span { font-size: 12px; color: #8fa39d; }
+
+.lab-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa39d; margin-bottom: 8px; }
+.lab-textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #e6ecea; border-radius: 10px; font-size: 13.5px; font-family: inherit; color: #0f2922; background: #f9fdfb; outline: none; resize: vertical; }
+.lab-textarea:focus { border-color: #167a68; background: #fff; box-shadow: 0 0 0 4px rgba(22, 122, 104, 0.08); }
