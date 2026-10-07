@@ -1,6 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute.jsx';
 
+// ---------- HOME ----------
+import Home from '../pages/home/Home.jsx';
+
 // ---------- AUTH ----------
 import Login from '../pages/auth/Login.jsx';
 import Register from '../pages/auth/Register.jsx';
@@ -54,8 +57,8 @@ import OwnerHome from '../pages/owner/OwnerHome.jsx';
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* ---------- DEFAULT ---------- */}
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      {/* ---------- HOME (public landing page) ---------- */}
+      <Route path="/" element={<Home />} />
 
       {/* ---------- PUBLIC (auth) ---------- */}
       <Route path="/login" element={<Login />} />
@@ -122,7 +125,7 @@ export default function AppRoutes() {
       </Route>
 
       {/* ---------- FALLBACK ---------- */}
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
