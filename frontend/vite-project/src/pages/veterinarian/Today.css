@@ -1,0 +1,327 @@
+/* ============================================
+   Veterinarian Today — page-specific
+============================================ */
+
+/* Queue header bar */
+.queue-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #fdf2e2;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #97611a;
+  font-weight: 600;
+}
+
+/* Schedule rows */
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.schedule-item:hover {
+  background: #f6f9f8;
+}
+
+.schedule-item.active {
+  background: #e6f5ee;
+  border-color: #b8e0d9;
+}
+
+.schedule-time {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f2922;
+  width: 52px;
+  flex-shrink: 0;
+}
+
+.schedule-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.schedule-info strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f2922;
+  margin-bottom: 2px;
+}
+
+.schedule-info span {
+  font-size: 12px;
+  color: #8fa39d;
+}
+
+.schedule-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.schedule-dot.green  { background: #2ea37b; }
+.schedule-dot.amber  { background: #e8a340; }
+.schedule-dot.blue   { background: #3b7bbf; }
+.schedule-dot.purple { background: #7c5cc4; }
+
+/* Patient header */
+.patient-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px 16px;
+  flex-wrap: wrap;
+}
+
+.patient-header-left {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.patient-header-left h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f2922;
+  margin-bottom: 3px;
+}
+
+.patient-header-left p {
+  font-size: 12.5px;
+  color: #4f6b63;
+}
+
+.tag-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Vitals */
+.vitals-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 16px 22px;
+  background: #f6f9f8;
+  border-radius: 10px;
+  margin: 0 22px;
+}
+
+.vital {
+  text-align: center;
+}
+
+.vital-label {
+  font-size: 11px;
+  color: #8fa39d;
+  margin-bottom: 4px;
+}
+
+.vital-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f2922;
+}
+
+/* SOAP tabs */
+.soap-tabs {
+  display: flex;
+  gap: 24px;
+  padding: 16px 22px 0;
+  border-bottom: 1px solid #e6ecea;
+  margin-top: 12px;
+}
+
+.soap-tab {
+  padding-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8fa39d;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.soap-tab:hover {
+  color: #4f6b63;
+}
+
+.soap-tab.active {
+  color: #167a68;
+}
+
+.soap-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #167a68;
+  border-radius: 2px;
+}
+
+/* SOAP notes */
+.soap-note {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid #e6ecea;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.15s;
+}
+
+.soap-note:hover {
+  border-color: #b8e0d9;
+}
+
+.soap-note:last-child {
+  margin-bottom: 0;
+}
+
+.soap-letter {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #e6f5ee;
+  color: #167a68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.soap-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.soap-body strong {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8fa39d;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.soap-body p {
+  font-size: 13px;
+  color: #0f2922;
+  line-height: 1.5;
+}
+
+/* Laboratory / Prescription report rows */
+.report-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6ecea;
+  margin-bottom: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.report-item:hover {
+  background: #f6f9f8;
+}
+
+.report-item.abnormal {
+  background: #fdf3f3;
+  border-color: #f3d0d0;
+}
+
+.report-item strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f2922;
+  margin-bottom: 2px;
+}
+
+.report-item span {
+  font-size: 11.5px;
+  color: #8fa39d;
+}
+
+/* Stat icon inside report rows */
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.stat-icon.red    { background: #fdecec; color: #d9534f; }
+.stat-icon.teal   { background: #e6f5ee; color: #167a68; }
+.stat-icon.blue   { background: #e6f0fa; color: #3b7bbf; }
+.stat-icon.green  { background: #e6f5ee; color: #2ea37b; }
+
+/* Toast */
+.vet-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f2922;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2000;
+  animation: vetSlideIn 0.2s ease;
+}
+
+.vet-toast i {
+  color: #a5e0c0;
+}
+
+@keyframes vetSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .vitals-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .vitals-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
